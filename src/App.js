@@ -1,8 +1,8 @@
 import React from 'react';
 import {Provider} from 'react-redux';
 import {BrowserRouter, Route, Redirect, Switch} from 'react-router-dom';
-import Results from './components/results/Results';
-import Details from './components/details/Details';
+import Results from './components/results';
+import Details from './components/details';
 import store from './redux/store';
 
 const App = () => {
