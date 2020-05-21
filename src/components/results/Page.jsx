@@ -1,10 +1,12 @@
-import React from 'react'
+import React from 'react';
+import AppBar from '../appBar';
 
 
 const Page = () => {
     return (
         <div>
-            Results
+            <AppBar></AppBar>
+            
         </div>
     )
 }

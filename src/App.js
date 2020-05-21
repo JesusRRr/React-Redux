@@ -5,11 +5,14 @@ import Results from './components/results';
 import Details from './components/details';
 import store from './redux/store';
 
+
 const App = () => {
     return (
         <div>
+            
             <Provider store={store}>
                 <BrowserRouter>
+                
                     <Switch>
                         <Route path="/results" component={Results}/>
                         <Route path="/details/:itemId" component={Details}/>
