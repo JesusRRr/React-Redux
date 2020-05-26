@@ -1,7 +1,7 @@
 import * as actions from './actionsType'
 
 export function reducer(state, {type, payload}){
-    switch(action.type){
+    switch(type){
         case actions.ADD_TODO:
             return {
                 ...state,
