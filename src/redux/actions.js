@@ -1,4 +1,3 @@
-import {reducer} from './reducer'
 import * as actions from './actionsType'
 
 export const addTodoAction = (todo) =>({
@@ -7,7 +6,7 @@ export const addTodoAction = (todo) =>({
 });
 
 export const toggleTodoAction = todoId =>({
-    type: actions.TOOGLE_TODO,
+    type: actions.TOGGLE_TODO,
     payload:todoId
 });
 

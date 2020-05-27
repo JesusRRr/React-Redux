@@ -1,3 +1,3 @@
 export const ADD_TODO='addTodo';
-export const TOOGLE_TODO='toogleTodo';
+export const TOGGLE_TODO='toggleTodo';
 export const DELETE_TODO='deleteTodo';

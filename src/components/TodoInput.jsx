@@ -1,9 +1,16 @@
 import React from 'react';
-
+import {useDispatch} from 'react-redux';
+import {addTodoAction} from '../redux/actions'
+import {store} from '../redux/store'
 
 const TodoInput = () => {
-
+    let lastId = 0;
     const [todo, setTodo] = React.useState('');
+
+    const dispatch=useDispatch();
+    const addTodo = (todo)=> dispatch(addTodoAction(todo));
+
+
     const onChange = event =>{
         setTodo(event.target.value);
     }
@@ -13,6 +20,14 @@ const TodoInput = () => {
             console.log("empty field");
             return;
         }
+        addTodo({
+            id:++lastId,
+            name: todo,
+            complete: false
+        })
+
+
+        console.log(store.getState());
     }
 
     return (

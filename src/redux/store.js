@@ -4,12 +4,12 @@ import {reducer} from './reducer'
 const initialState ={
     todos:[
         {
-            id : 1,
+            id : 1000,
             name : "Go to gym",
             complete: false
         },
         {
-            id : 2,
+            id : 262,
             name : "study",
             complete: false
         },
@@ -20,4 +20,5 @@ const initialState ={
 export const store = createStore(
     reducer,
     initialState,
+    window.reduxDevTools && window.reduxDevTools()
 );

@@ -8,7 +8,7 @@ export function reducer(state, {type, payload}){
                 todos:[...state.todos, payload]
             };
         
-        case actions.TOOGLE_TODO:
+        case actions.TOGGLE_TODO:
             return{
                 ...state,
                 todos: state.todos.map(todo => (todo.id===payload)?{...todo,complete: !todo.complete}: todo)
