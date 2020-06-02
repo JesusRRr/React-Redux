@@ -1,6 +1,11 @@
 {
-    "coments":[
+    "comments":[
+        {
+            "id":1,
+            "author":"Jesus",
+            "content": "hola"
 
+        }
     ],
     "post":[
         
