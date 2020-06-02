@@ -1,4 +1,5 @@
 import React from 'react';
+import Post from './Post'
 
 const PostForm = () => {
 
@@ -23,6 +24,7 @@ const PostForm = () => {
                             post
                         </button>
 
+                        <Post/>
 
                     </div>
 
