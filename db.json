@@ -1,13 +1,15 @@
 {
-    "comments":[
-        {
-            "id":1,
-            "author":"Jesus",
-            "content": "hola"
-
-        }
-    ],
-    "post":[
-        
-    ]
+  "comments": [
+    {
+      "author": "norris",
+      "content": "hey arnold",
+      "id": 1
+    },
+    {
+      "author": "norris",
+      "content": "hey arnold",
+      "id": 2
+    }
+  ],
+  "post": []
 }

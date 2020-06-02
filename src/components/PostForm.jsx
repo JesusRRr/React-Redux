@@ -12,7 +12,7 @@ const PostForm = () => {
             <form onSubmit={makePost}>
                 <div className="card border-ligth ">
                     <div className="card-header mb-3">Make a Post</div>
-                    <div classNane="card-body">
+                    <div className="card-body">
                         <textarea
                             className="form-control"
                             placeholder="What do you want to do today?"

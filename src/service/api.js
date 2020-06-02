@@ -1,11 +1,14 @@
 import axios from 'axios';
 
 const requestHelper =axios.create({
-    baseURL:'https://localhost/4000'
+    baseURL:'http://localhost:4000/',
+    headers:{
+        "content-type":'application/json'
+    }
 });
 
 export default {
-    post:{
+    posts:{
         get:()=> requestHelper({
             url:'posts',
             method:'get'
@@ -16,7 +19,7 @@ export default {
             data
         })
     },
-    comment:{
+    comments:{
         get:()=> requestHelper({
             url:'comments',
             method:'get'

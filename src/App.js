@@ -1,8 +1,14 @@
-import React from 'react'
+import React,{useEfect} from 'react'
 import PostForm from './components/PostForm'
+import api from './service/api'
 
 
 const App = () => {
+
+    React.useEffect(() => {
+        
+    })
+
     return (
         <div className="container">
             <div className="row justify-content-center">
