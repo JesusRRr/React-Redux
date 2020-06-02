@@ -7,16 +7,18 @@ const Post = () => {
     const [message, setMessage] = useState('');
     return (
         <div>
-            <div className="card">
+            <div className="card mb-2 mt-2">
                 <div className="card-body">
                     <p className="card-text">{post}</p>
                 </div>
 
+                <input 
+                    placeholder="write a comment"
+                    className="form-control"
+                />
+
             </div>
-            <input 
-                placeholder="write a comment"
-                className="form-control"
-            />
+            
         </div>
     )
 }
