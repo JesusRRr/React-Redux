@@ -1,5 +1,5 @@
 import React from 'react'
-import Post from './components/Post'
+import PostForm from './components/PostForm'
 
 
 const App = () => {
@@ -7,7 +7,7 @@ const App = () => {
         <div className="container">
             <div className="row justify-content-center">
                 <div className="col col-sm-10 col-md-10 col-lg-8">
-                    <Post></Post>
+                    <PostForm></PostForm>
                 </div>
 
             </div>

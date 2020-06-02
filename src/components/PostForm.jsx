@@ -1,15 +1,20 @@
 import React from 'react';
 
-const Post = () => {
+const PostForm = () => {
+
+    const makePost=(e)=>{
+        e.preventDefault();
+    }
+
     return (
         <div>
-            <form>
-                <div className="card border-ligth mb-3">
-                    <div className="card-header">Make a Post</div>
+            <form onSubmit={makePost}>
+                <div className="card border-ligth ">
+                    <div className="card-header mb-3">Make a Post</div>
                     <div classNane="card-body">
                         <textarea
-                            className="form-control mb-3"
-                            placeholder="post"
+                            className="form-control"
+                            placeholder="What do you want to do today?"
                         />
                         <button
                             className="btn btn-primary"
@@ -27,4 +32,4 @@ const Post = () => {
     )
 }
 
-export default Post;
+export default PostForm;
