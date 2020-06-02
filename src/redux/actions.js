@@ -4,4 +4,4 @@ export const createPost = createAction('createPost');
 export const getPosts = createAction('getPosts');
 
 export const createComment = createAction('createComment');
-export const getComment = createAction('getComment');
+export const getComments = createAction('getComments');

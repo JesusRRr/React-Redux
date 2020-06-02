@@ -6,8 +6,8 @@ export default handleActions({
     [createPost]:(state,action)=>{
         return [...state, action.payload];
     },
-    [getPost]:(state,action)=>{
+    [getPosts]:(state,action)=>{
         return action.payload;
     }
 
-},[])
+},[]);
