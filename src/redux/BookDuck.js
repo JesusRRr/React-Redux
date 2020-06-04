@@ -16,13 +16,13 @@ export default function reducer(state=[], action){
 }
 
 
-export default function getBooks(){
+export function getBooks(){
     return {
         type:GET_BOOKS
     }
 }
 
-export default function createBook(book){
+export function createBook(book){
     return {
         type:CREATE_BOOK,
         payload:book
