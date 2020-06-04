@@ -4,27 +4,23 @@ export const CREATE_BOOK="createBook";
 
 
 //Reducer
-export default function reducer(state=[], action){
+ const bookReducer=(state=[], action)=>{
     switch(action.type){
         case CREATE_BOOK:{
             return [...state,action.payload]
         }
-        case GET_BOOKS:{
+        default:{
             return state;
         }
     }
 }
-
-
-export function getBooks(){
-    return {
-        type:GET_BOOKS
-    }
-}
-
+//Action creators
 export function createBook(book){
     return {
         type:CREATE_BOOK,
         payload:book
     }
 }
+
+
+export default bookReducer;
