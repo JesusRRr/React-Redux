@@ -21,6 +21,7 @@ const initalAuthor={
     nacionality:''
 }
 const BookForm = () => {
+    const [error,setError]=useState('');
     const [authors, setAuthors]=useState([]);
     const [author,setAuthor]=useState(initalAuthor);
     const [book, setBook]= useState(initialBook);
@@ -37,15 +38,25 @@ const BookForm = () => {
         setAuthor({...author,[e.target.name] :e.target.value})
         
     }
-    const addAuthor =  ()=>{
-        //TODO validate inputs
-        setAuthors([...authors,author]);
-        setAuthor(initalAuthor);
+
+    const validateInputs=(entity)=>{
+        const validate =(value) => value==='';
+        const isCorrect=Object.values(entity).some(validate);
+        return isCorrect;
+    }
+    const addAuthor = ()=>{
+        if(validateInputs(author)){
+            return
+        }
+       setAuthors([...authors,author]);
+       setAuthor(initalAuthor);
     }
 
     const addBook=(e)=>{
-        //TODO validate inputs
         e.preventDefault();
+        if(validateInputs(book)){
+            return
+        }
         setBook({...book,authors});
 
         //BookService.books.create(book);
