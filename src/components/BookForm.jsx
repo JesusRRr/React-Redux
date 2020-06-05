@@ -1,6 +1,7 @@
 import React,{useState} from 'react';
 import {createBook} from '../redux/BookDuck';
 import BookService from '../service/BookService'
+import AuthorLabel from './AuthorLabel';
 
 const style='form-control mb-1';
 const BookForm = () => {
@@ -20,7 +21,7 @@ const BookForm = () => {
         language:'',
         status:'AVAILABLE',
         bookcover:'',
-        authors
+        authors:[]
     });
     
     const handleInputChange=(e)=>{
@@ -33,17 +34,23 @@ const BookForm = () => {
 
     const handleAuthorInputChange=(e)=>{
         setAuthor({...author,[e.target.name] :e.target.value})
+        
     }
-    const addAuthor = ()=>{
+    const addAuthor =  ()=>{
         setAuthors([...authors,author])
+        console.log("add author to authors")
+        setAuthor({
+            name:'',
+            lastName:'',
+            nacionality:''
+        })
     }
 
     const addBook=(e)=>{
         e.preventDefault();
-        setBook({...book, authors});
-        
-        BookService.books.create(book);
-        console.log("check")
+        //BookService.books.create(book);
+        setBook({...book,authors})
+        console.log("add book")
     }
 
     return (
@@ -57,11 +64,18 @@ const BookForm = () => {
                 <input className={style} name="category" value={book.category} onChange={handleInputChange} placeholder="category"/>
                 <input className={style} name="language" value={book.language} onChange={handleInputChange} placeholder="language"/>
                 <input className={style} name="bookcover" value={book.bookcover} onChange={handleInputChange} placeholder="bookcover"/>
+                
+                {  authors.length>0 && 
+                    authors.map((author,index)=>(
+                        <AuthorLabel author={author} key={index}/>
+                    ))
+                }
+            
                 <h4>Add Author</h4>
                 <input className={style} name="name" value={author.name} onChange={handleAuthorInputChange} placeholder="name"/>
                 <input className={style} name="lastName" value={author.lastName} onChange={handleAuthorInputChange} placeholder="lastName"/>
                 <input className={style} name="nacionality" value={author.nacionality} onChange={handleAuthorInputChange} placeholder="nacionality"/>
-                <button className="btn btn-primary mb-2" onClick={addAuthor}>Add Author </button>
+                <button type="button" className="btn btn-primary mb-2" onClick={addAuthor}>Add Author </button>
                 <button className="btn btn-success btn-block">Add book</button>
             </form>
            
