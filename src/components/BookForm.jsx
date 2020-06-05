@@ -4,25 +4,26 @@ import BookService from '../service/BookService'
 import AuthorLabel from './AuthorLabel';
 
 const style='form-control mb-1';
+const initialBook={
+    name:'',
+    isbn:'',
+    edition:'',
+    editorial:'',
+    category:'',
+    language:'',
+    status:'AVAILABLE',
+    bookcover:'',
+    authors:[]
+}
+const initalAuthor={
+    name:'',
+    lastName:'',
+    nacionality:''
+}
 const BookForm = () => {
     const [authors, setAuthors]=useState([]);
-
-    const [author,setAuthor]=useState({
-        name:'',
-        lastName:'',
-        nacionality:''
-    });
-    const [book, setBook]= useState({
-        name:'',
-        isbn:'',
-        edition:'',
-        editorial:'',
-        category:'',
-        language:'',
-        status:'AVAILABLE',
-        bookcover:'',
-        authors:[]
-    });
+    const [author,setAuthor]=useState(initalAuthor);
+    const [book, setBook]= useState(initialBook);
     
     const handleInputChange=(e)=>{
         setBook(
@@ -37,20 +38,18 @@ const BookForm = () => {
         
     }
     const addAuthor =  ()=>{
-        setAuthors([...authors,author])
-        console.log("add author to authors")
-        setAuthor({
-            name:'',
-            lastName:'',
-            nacionality:''
-        })
+        //TODO validate inputs
+        setAuthors([...authors,author]);
+        setAuthor(initalAuthor);
     }
 
     const addBook=(e)=>{
+        //TODO validate inputs
         e.preventDefault();
+        setBook({...book,authors});
+
         //BookService.books.create(book);
-        setBook({...book,authors})
-        console.log("add book")
+        setBook(initialBook);
     }
 
     return (
